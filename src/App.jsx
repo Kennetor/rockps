@@ -1,44 +1,42 @@
 import "./App.css";
 
 // Images
-import rules from "../images/image-rules.svg";
-import closeRules from "../images/icon-close.svg";
 
+import triangle from "../images/bg-triangle.svg";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 // Components
+import Paper from "./component/paper";
+import Rock from "./component/rock";
+import Scissors from "./component/scissors";
+import Scoreboard from "./component/scoreboard";
+import Modal from "./component/modal";
 
 function App() {
   return (
     <>
       <div className="App">
-        <div className="top-section">
-          <div className="grid text-5xl text-left">
-            <p>ROCK</p>
-            <p>PAPER</p>
-            <p>SCISSORS</p>
-          </div>
-        </div>
-
-        {/* Rules Modal */}
-        <label htmlFor="my-modal" className="btn mt-20">
-          Rules
-        </label>
-        <input type="checkbox" id="my-modal" className="modal-toggle" />
-        <div className="modal">
-          <div className="modal-box bg-slate-100">
-            {/* Modal Content */}
-            <label htmlFor="my-modal" className="">
-              <div className="rulesheader">
-                <div className="text-gray-900 text-4xl float-left font-bold">
-                  RULES
+        <Router>
+          <Scoreboard />
+          {/* Choices */}
+          <div className="ml-20 mt-32 absolute">
+            <img src={triangle} className="absolute" />
+            <div className="flex">
+              <Routes>
+                <div className="relative -top-12">
+                  <Paper />
                 </div>
-                <img src={closeRules} className="float-right" />
-              </div>
-            </label>
-            <img src={rules} className="mt-20 m-auto" />
-            <div className="modal-action"></div>
+                <div className="relative top-36 right-16">
+                  <Rock />
+                </div>
+                <div className="relative -top-10 right-28">
+                  <Scissors />
+                </div>
+              </Routes>
+            </div>
           </div>
-        </div>
+        </Router>
       </div>
+      <Modal />
     </>
   );
 }

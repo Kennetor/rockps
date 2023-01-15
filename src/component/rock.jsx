@@ -1,10 +1,13 @@
 // CSS
 import "./styling.css";
+import rock from "./icon-rock.svg";
 
 function Rock() {
   return (
     <>
-      <h1>Rock</h1>
+      <div class="stein">
+        <img src={rock} className="m-8" />
+      </div>
     </>
   );
 }

@@ -1,10 +1,13 @@
 // CSS
 import "./styling.css";
+import saks from "./icon-scissors.svg";
 
 function Scissors() {
   return (
     <>
-      <h1>Scissors</h1>
+      <div class="saks">
+        <img src={saks} className="m-8" />
+      </div>
     </>
   );
 }
