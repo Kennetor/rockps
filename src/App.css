@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&display=swap");
 
 * {
-  font-family: "Barlow Semi Condensed", sans-serif;box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  box-sizing: border-box;
 }
 #root {
   max-width: 1366px;
@@ -16,7 +17,5 @@ body {
     hsl(214, 47%, 23%),
     hsl(237, 49%, 15%)
   );
-
-  
 }
 /* - Radial Gradient: hsl(214, 47%, 23%) to hsl(237, 49%, 15%) */

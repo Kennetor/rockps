@@ -15,19 +15,21 @@ function App() {
   return (
     <>
       <div className="App">
-        <Scoreboard />
-        {/* Choices */}
-        <div className="ml-20 mt-32 absolute">
-          <img src={triangle} className="absolute" />
-          <div className="flex">
-            <div className="relative -top-12">
-              <Paper />
-            </div>
-            <div className="relative top-36 right-16">
-              <Rock />
-            </div>
-            <div className="relative -top-10 right-28">
-              <Scissors />
+        <div className="scale-150">
+          <Scoreboard />
+          {/* Choices */}
+          <div className="ml-20 mt-16 absolute scale-110 top-56 left-56">
+            <img src={triangle} className="absolute" />
+            <div className="flex">
+              <div className="relative -top-12">
+                <Paper />
+              </div>
+              <div className="relative top-36 right-16">
+                <Rock />
+              </div>
+              <div className="relative -top-10 right-28">
+                <Scissors />
+              </div>
             </div>
           </div>
         </div>
