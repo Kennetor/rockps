@@ -6,7 +6,7 @@ function Rock() {
   return (
     <>
       <div class="stein">
-        <img src={rock} className="m-8" />
+        <img src={rock} className="p-8" />
       </div>
     </>
   );

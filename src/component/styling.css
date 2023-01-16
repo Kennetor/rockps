@@ -2,48 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  display: flex;
-}
-@media only screen and (max-width: 375px) {
-  body {
-    background-color: blue;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 100vh;
-    width: 100vw;
-  }
-}
 
 .stein {
-  height: 150px;
-  width: 150px;
+
   background: white;
   border-radius: 50%;
   border-style: solid;
-  border-width: 15px;
+  border-width: 10px;
   border-color: hsl(349, 70%, 56%);
-  display: absolute;
 }
 
 .saks {
-  height: 150px;
-  width: 150px;
+
   background: white;
   border-radius: 50%;
   border-style: solid;
-  border-width: 15px;
+  border-width: 10px;
   border-color: hsl(39, 89%, 49%);
-  display: absolute;
 }
 
 .papir {
-  height: 150px;
-  width: 150px;
+
   background: white;
   border-radius: 50%;
   border-style: solid;
-  border-width: 15px;
+  border-width: 10px;
   border-color: hsl(230, 89%, 65%);
-  display: absolute;
 }
