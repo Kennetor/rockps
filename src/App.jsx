@@ -8,13 +8,12 @@ import Versus from "./component/versusMode";
 function App() {
   return (
     <>
-      <Scoreboard />
-
       <Router>
         <div>
+          <Scoreboard />
           <Routes>
             <Route path="/" element={<Game />} />
-            <Route path="/versus" render={() => <Versus />} />
+            <Route path="/play" element={<Versus />} />
           </Routes>
         </div>
       </Router>

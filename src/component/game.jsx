@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 // CSS
 import "../App.css";
 
@@ -7,16 +8,14 @@ import triangle from "../component/bg-triangle.svg";
 import Paper from "./paper";
 import Rock from "./rock";
 import Scissors from "./scissors";
-import Scoreboard from "./scoreboard";
 import Modal from "./modal";
-import { Link } from "react-router-dom";
+
 function Game() {
   return (
     <>
-      <div className="">
-        {/* <Scoreboard /> */}
+      <div className="xl:-mt-18">
         {/* Choices */}
-        <div className="xl:ml-20 xl:mt-20 xl:absolute xl:scale-110 top-56 left-40 mt-10">
+        <div className="xl:ml-20 xl:mt-20 xl:absolute xl:scale-110 top-56 left-40 mt-0">
           <img
             src={triangle}
             className="absolute left-10 xl:left-80 xl:top-44 xl:scale-150"
@@ -28,10 +27,14 @@ function Game() {
               </Link>
             </div>
             <div className="relative xl:left-72 xl:top-96 top-40 left-2 xl:scale-150">
-              <Rock />
+              <Link to="/play">
+                <Rock />
+              </Link>
             </div>
             <div className="relative -top-10 xl:left-80 xl:top-20 right-4 xl:scale-150">
-              <Scissors />
+              <Link to="/play">
+                <Scissors />
+              </Link>
             </div>
           </div>
         </div>
