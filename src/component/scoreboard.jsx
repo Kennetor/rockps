@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Scoreboard() {
   return (
     <>
-      <div className="border-2 rounded-xl p-6 flex -mt-[28rem]">
+      <div className="border-2 rounded-xl p-6 flex -mt-[28rem] border-blue-300">
         <div className="text-5xl text-left w-[40rem]">
           <p>ROCK</p>
           <p>PAPER</p>

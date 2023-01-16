@@ -1,4 +1,10 @@
+import Scoreboard from "./scoreboard";
+
 function Versus() {
-  return <></>;
+  return (
+    <>
+      <Scoreboard />
+    </>
+  );
 }
 export default Versus;

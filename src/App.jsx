@@ -1,9 +1,9 @@
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+// CSS
 import "./App.css";
 
 // Images
-
 import triangle from "../images/bg-triangle.svg";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
 // Components
 import Paper from "./component/paper";
 import Rock from "./component/rock";
@@ -16,7 +16,9 @@ function App() {
     <>
       <div className="App">
         <div className="scale-150">
-          <Scoreboard />
+          <Router>
+            <Scoreboard />
+          </Router>
           {/* Choices */}
           <div className="ml-20 mt-16 absolute scale-110 top-56 left-56">
             <img src={triangle} className="absolute" />
