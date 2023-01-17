@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
-
+import { useState } from "react";
 function Scoreboard() {
+  const [score, setScore] = useState(0);
+
   return (
     <>
       <div className="border-2 rounded-xl p-6 flex xl:-mt-[25rem] border-blue-300 -mt-60 xl:scale-110 fixed xl:right-60 right-2">
@@ -12,11 +13,12 @@ function Scoreboard() {
         <div className="rounded-xl border-2 xl:ml-44 w-1/3 bg-white text-3xl text-slate-800 ml-24">
           <p className="text-2xl xl:mt-4 mt-2 xl:w w-20 m-auto">Score</p>
           <div className="text-7xl">
-            <span>0</span>
+            <span>{score}</span>
           </div>
         </div>
       </div>
     </>
   );
 }
+
 export default Scoreboard;

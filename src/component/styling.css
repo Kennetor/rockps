@@ -2,30 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .stein {
-
   background: white;
   border-radius: 50%;
   border-style: solid;
   border-width: 10px;
   border-color: hsl(349, 70%, 56%);
 }
+.stein:hover {
+  border-color: hsl(349, 71%, 26%);
+}
 
 .saks {
-
   background: white;
   border-radius: 50%;
   border-style: solid;
   border-width: 10px;
   border-color: hsl(39, 89%, 49%);
 }
+.saks:hover {
+  border-color: hsl(30, 80%, 40%);
+}
 
 .papir {
-
   background: white;
   border-radius: 50%;
   border-style: solid;
   border-width: 10px;
   border-color: hsl(230, 89%, 65%);
+}
+.papir:hover {
+  border-color: hsl(250, 70%, 65%);
 }
