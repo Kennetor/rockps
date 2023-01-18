@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import ScoreContext from "../contexts/ScoreContext";
 function Scoreboard() {
-  const [score, setScore] = useState(0);
+  // const [score, setScore] = useState(0);
+  const { score, updateScore } = useContext(ScoreContext);
 
   return (
     <>
       <div className="border-2 rounded-xl p-6 flex xl:-mt-[25rem] border-blue-300 -mt-60 xl:scale-110 fixed xl:right-60 right-2">
         <div className="xl:text-5xl text-3xl p-2 text-left xl:w-[33rem] ">
-          <p>ROCK</p>
+          <p onClick={() => updateScore(1)}>ROCK</p>
           <p>PAPER</p>
           <p>SCISSORS</p>
         </div>

@@ -8,19 +8,28 @@ import RockVersus from "./component/rockVersus";
 import PaperVersus from "./component/paperVersus";
 import ScissorsVersus from "./component/scissorsVersus";
 
+import ScoreContext from "./contexts/ScoreContext";
+
 function App() {
+  const [score, setScore] = useState(0);
+
+  function updateScore(points) {
+    setScore((oldScore) => oldScore + points);
+  }
   return (
     <>
       <Router>
-        <div>
-          <Scoreboard />
-          <Routes>
-            <Route path="/" element={<Game />} />
-            <Route path="/play-rock" element={<RockVersus />} />
-            <Route path="/play-paper" element={<PaperVersus />} />
-            <Route path="/play-scissors" element={<ScissorsVersus />} />
-          </Routes>
-        </div>
+        <ScoreContext.Provider value={{ score, updateScore }}>
+          <div>
+            <Scoreboard />
+            <Routes>
+              <Route path="/" element={<Game />} />
+              <Route path="/play-rock" element={<RockVersus />} />
+              <Route path="/play-paper" element={<PaperVersus />} />
+              <Route path="/play-scissors" element={<ScissorsVersus />} />
+            </Routes>
+          </div>{" "}
+        </ScoreContext.Provider>
       </Router>
     </>
   );
