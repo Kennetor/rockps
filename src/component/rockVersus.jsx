@@ -1,13 +1,33 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+// Contexts
+import { useEffect, useState, useContext } from "react";
+import ScoreContext from "../contexts/ScoreContext";
+// Components
 import Paper from "./paper";
 import Rock from "./rock";
 import Scissors from "./scissors";
 import Modal from "./modal";
 
+const choices = ["rock", "paper", "scissors"];
+
+function determineOutcome(userChoice, randomChoice) {
+  const randomStringChoice = choices[randomChoice];
+  if (userChoice === "rock" && randomStringChoice === "scissors") {
+    return 1;
+  } else if (userChoice === "rock" && randomStringChoice === "paper") {
+    return -1;
+  } else if (userChoice === "rock" && randomStringChoice === "rock") {
+    return 0;
+  }
+  console.log(randomStringChoice);
+}
+
 function RockVersus() {
+  const [userChoice, setUserChoice] = useState("rock");
   const [random, setRandom] = useState(0);
   const [countdown, setCountdown] = useState(1);
+  const { updateScore } = useContext(ScoreContext);
+  const [outcome, setOutcome] = useState(null);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -17,9 +37,24 @@ function RockVersus() {
     if (countdown === 0) {
       clearInterval(intervalId);
       setRandom(Math.floor(Math.random() * 3));
+      let randomChoice;
+      if (random === 0) {
+        randomChoice = "paper";
+      } else if (random === 1) {
+        randomChoice = "rock";
+      } else {
+        randomChoice = "scissors";
+      }
+      setOutcome(determineOutcome(userChoice, randomChoice));
     }
     return () => clearInterval(intervalId);
   }, [countdown]);
+
+  useEffect(() => {
+    if (outcome !== null) {
+      updateScore(outcome);
+    }
+  }, [outcome]);
 
   return (
     <>

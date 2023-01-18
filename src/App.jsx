@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { HashRouter as Router, Route, Link, Routes } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Route,
+  Link,
+  Routes,
+  Outlet,
+} from "react-router-dom";
 
 // Components
 import Game from "./component/game";
@@ -31,6 +37,7 @@ function App() {
           </div>{" "}
         </ScoreContext.Provider>
       </Router>
+      <Outlet />
     </>
   );
 }

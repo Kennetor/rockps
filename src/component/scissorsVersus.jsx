@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Paper from "./paper";
 import Rock from "./rock";
 import Scissors from "./scissors";
 import Modal from "./modal";
+import ScoreContext from "../contexts/ScoreContext";
 
 function ScissorsVersus() {
   const [random, setRandom] = useState(0);
   const [countdown, setCountdown] = useState(1);
+  const { updateScore } = useContext(ScoreContext);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -20,7 +22,6 @@ function ScissorsVersus() {
     }
     return () => clearInterval(intervalId);
   }, [countdown]);
-
   return (
     <>
       <div className="xl:mt-0 -mt-14">
@@ -48,6 +49,9 @@ function ScissorsVersus() {
               )
             ) : null}
           </div>
+          {countdown === 0 && random === 1 ? updateScore(1) : null}
+          {countdown === 0 && random === 2 ? updateScore(-1) : null}
+          {countdown === 0 && random === 0 ? updateScore(0) : null}
         </div>
       </div>
       <Modal />
