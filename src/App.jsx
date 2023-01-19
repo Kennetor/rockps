@@ -13,15 +13,14 @@ import Scoreboard from "./component/scoreboard";
 import RockVersus from "./component/rockVersus";
 import PaperVersus from "./component/paperVersus";
 import ScissorsVersus from "./component/scissorsVersus";
+import updateScore from "./component/rockVersus";
 
 import ScoreContext from "./contexts/ScoreContext";
 
 function App() {
   const [score, setScore] = useState(0);
 
-  function updateScore(points) {
-    setScore((oldScore) => oldScore + points);
-  }
+  <updateScore />;
   return (
     <>
       <Router>

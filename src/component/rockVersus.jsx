@@ -10,8 +10,9 @@ import Modal from "./modal";
 
 const choices = ["rock", "paper", "scissors"];
 
-function determineOutcome(userChoice, randomChoice) {
+function determineOutcome(userChoice, randomChoice, setUserChoice) {
   const randomStringChoice = choices[randomChoice];
+
   if (userChoice === "rock" && randomStringChoice === "scissors") {
     return 1;
   } else if (userChoice === "rock" && randomStringChoice === "paper") {
@@ -21,7 +22,11 @@ function determineOutcome(userChoice, randomChoice) {
   }
   console.log(randomStringChoice);
 }
-
+export function updateScore() {
+  if (userChoice === "rock" && randomStringChoice === "rock") {
+    setScore((oldScore) => oldScore + -1);
+  }
+}
 function RockVersus() {
   const [userChoice, setUserChoice] = useState("rock");
   const [random, setRandom] = useState(0);
