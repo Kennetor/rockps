@@ -25,12 +25,12 @@ function PaperVersus() {
 
   useEffect(() => {
     if (countdown === 0) {
-      if (random === 0) {
-        updateScore("win");
-      } else if (random === 1) {
+      if (random === 1) {
+        updateScore("draw");
+      } else if (random === 2) {
         updateScore("lose");
       } else {
-        updateScore("draw");
+        updateScore("win");
       }
     }
   }, [countdown, random]);
@@ -62,8 +62,8 @@ function PaperVersus() {
               )
             ) : null}
           </div>
-          {countdown === 0 && random === 1 ? updateScore(1) : null}
-          {countdown === 0 && random === 2 ? updateScore(-1) : null}
+          {countdown === 0 && random === 2 ? updateScore(1) : null}
+          {countdown === 0 && random === 1 ? updateScore(-1) : null}
           {countdown === 0 && random === 0 ? updateScore(0) : null}
         </div>
       </div>

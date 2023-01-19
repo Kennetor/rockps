@@ -13,18 +13,19 @@ function App() {
   const [score, setScore] = useState(0);
 
   function updateScore(outcome) {
-    if (outcome === "win") {
-      setScore((prevScore) => prevScore + 1);
-    } else if (outcome === "lose") {
-      setScore((prevScore) => prevScore - 1);
+    if (outcome === "lose") {
+      setScore((prevScore) => prevScore);
     } else if (outcome === "draw") {
-      setScore(score);
+      setScore((prevScore) => prevScore + 1);
+    } else if (outcome === "win") {
+      setScore((prevScore) => prevScore - 1);
     }
+
     console.log(outcome);
   }
 
   useEffect(() => {
-    console.log("score updated: ", score);
+    // console.log("score updated: ", score);
   }, [score]);
 
   return (
