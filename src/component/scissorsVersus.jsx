@@ -22,6 +22,20 @@ function ScissorsVersus() {
     }
     return () => clearInterval(intervalId);
   }, [countdown]);
+
+  useEffect(() => {
+    if (countdown === 0) {
+      if (random === 1) {
+        updateScore("draw");
+      } else if (random === 2) {
+        updateScore("lose");
+      } else {
+        updateScore("win");
+      }
+      console.log(random);
+    }
+  }, [countdown, random]);
+
   return (
     <>
       <div className="xl:mt-0 -mt-14">
@@ -49,9 +63,6 @@ function ScissorsVersus() {
               )
             ) : null}
           </div>
-          {countdown === 0 && random === 1 ? updateScore(1) : null}
-          {countdown === 0 && random === 2 ? updateScore(-1) : null}
-          {countdown === 0 && random === 0 ? updateScore(0) : null}
         </div>
       </div>
       <Modal />
