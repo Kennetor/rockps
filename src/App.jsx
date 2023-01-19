@@ -1,11 +1,5 @@
-import { useState } from "react";
-import {
-  HashRouter as Router,
-  Route,
-  Link,
-  Routes,
-  Outlet,
-} from "react-router-dom";
+import { useState, useEffect } from "react";
+import { HashRouter as Router, Route, Routes, Outlet } from "react-router-dom";
 
 // Components
 import Game from "./component/game";
@@ -13,14 +7,19 @@ import Scoreboard from "./component/scoreboard";
 import RockVersus from "./component/rockVersus";
 import PaperVersus from "./component/paperVersus";
 import ScissorsVersus from "./component/scissorsVersus";
-import updateScore from "./component/rockVersus";
 
 import ScoreContext from "./contexts/ScoreContext";
 
 function App() {
   const [score, setScore] = useState(0);
 
-  <updateScore />;
+  function updateScore() {
+    setScore(score + 1);
+  }
+  useEffect(() => {
+    console.log("score updated: ", score);
+  }, [score]);
+
   return (
     <>
       <Router>

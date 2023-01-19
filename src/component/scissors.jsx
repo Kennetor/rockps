@@ -6,7 +6,7 @@ function Scissors() {
   return (
     <>
       <div class="saks">
-        <img src={saks} className="p-8" />
+        <img src={saks} className=" p-8" />
       </div>
     </>
   );

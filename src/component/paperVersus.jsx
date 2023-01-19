@@ -22,7 +22,17 @@ function PaperVersus() {
     }
     return () => clearInterval(intervalId);
   }, [countdown]);
-
+  useEffect(() => {
+    if (setRandom === countdown) {
+      if (random === 1) {
+        updateScore(1);
+      } else if (random === 2) {
+        updateScore(-1);
+      } else {
+        updateScore(0);
+      }
+    }
+  }, [countdown, random]);
   return (
     <>
       <div className="xl:mt-0 -mt-14">
