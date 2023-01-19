@@ -7,16 +7,22 @@ import Scoreboard from "./component/scoreboard";
 import RockVersus from "./component/rockVersus";
 import PaperVersus from "./component/paperVersus";
 import ScissorsVersus from "./component/scissorsVersus";
-import determineOutcome from "./component/rockVersus";
 import ScoreContext from "./contexts/ScoreContext";
 
 function App() {
   const [score, setScore] = useState(0);
 
-  // This updates score by 1 in the RockVersus component, idk how to change it so it decrements or increments the score based on the outcome. halp plx
-  function updateScore() {
-    setScore(score + 1);
+  function updateScore(outcome) {
+    if (outcome === "win") {
+      setScore((prevScore) => prevScore + 1);
+    } else if (outcome === "lose") {
+      setScore((prevScore) => prevScore - 1);
+    } else if (outcome === "draw") {
+      setScore(score);
+    }
+    console.log(outcome);
   }
+
   useEffect(() => {
     console.log("score updated: ", score);
   }, [score]);

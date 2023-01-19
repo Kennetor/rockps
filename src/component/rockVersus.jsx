@@ -8,22 +8,33 @@ import Rock from "./rock";
 import Scissors from "./scissors";
 import Modal from "./modal";
 
-const choices = ["rock", "paper", "scissors"];
-
 export function determineOutcome(userChoice, randomChoice) {
-  const randomStringChoice = choices[randomChoice];
   let result;
-  if (userChoice === "rock" && randomStringChoice === "scissors") {
-    // return setScore(score + 1);
-    result = "win";
-  } else if (userChoice === "rock" && randomStringChoice === "paper") {
-    // return setScore(score - 1);
-    result = "lose";
-  } else if (userChoice === "rock" && randomStringChoice === "rock") {
-    result = "draw";
+  if (userChoice === "rock") {
+    if (randomChoice === "scissors") {
+      result = "win";
+    } else if (randomChoice === "paper") {
+      result = "lose";
+    } else if (randomChoice === "rock") {
+      result = "draw";
+    }
+  } else if (userChoice === "paper") {
+    if (randomChoice === "rock") {
+      result = "win";
+    } else if (randomChoice === "scissors") {
+      result = "lose";
+    } else if (randomChoice === "paper") {
+      result = "draw";
+    }
+  } else if (userChoice === "scissors") {
+    if (randomChoice === "paper") {
+      result = "win";
+    } else if (randomChoice === "rock") {
+      result = "lose";
+    } else if (randomChoice === "scissors") {
+      result = "draw";
+    }
   }
-  console.log(randomStringChoice);
-  return result;
 }
 
 function RockVersus() {
@@ -32,9 +43,6 @@ function RockVersus() {
   const [countdown, setCountdown] = useState(1);
   const { updateScore } = useContext(ScoreContext);
   const [outcome, setOutcome] = useState(null);
-  if (outcome === "Win" || outcome === "Lose") {
-    updateScore(outcome === "Win" ? 1 : -1);
-  }
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -59,7 +67,7 @@ function RockVersus() {
   }, [countdown]);
 
   useEffect(() => {
-    if (outcome !== null) {
+    if (outcome !== null && outcome !== "draw") {
       updateScore(outcome);
     }
   }, [outcome]);
