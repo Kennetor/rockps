@@ -10,16 +10,20 @@ import Modal from "./modal";
 
 const choices = ["rock", "paper", "scissors"];
 
-function determineOutcome(userChoice, randomChoice) {
+export function determineOutcome(userChoice, randomChoice) {
   const randomStringChoice = choices[randomChoice];
+  let result;
   if (userChoice === "rock" && randomStringChoice === "scissors") {
-    return setScore(score + 1);
+    // return setScore(score + 1);
+    result = "win";
   } else if (userChoice === "rock" && randomStringChoice === "paper") {
-    return setScore(score - 1);
+    // return setScore(score - 1);
+    result = "lose";
   } else if (userChoice === "rock" && randomStringChoice === "rock") {
-    return "Draw";
+    result = "draw";
   }
   console.log(randomStringChoice);
+  return result;
 }
 
 function RockVersus() {
@@ -28,15 +32,9 @@ function RockVersus() {
   const [countdown, setCountdown] = useState(1);
   const { updateScore } = useContext(ScoreContext);
   const [outcome, setOutcome] = useState(null);
-  useEffect(() => {
-    if (outcome !== null) {
-      if (outcome === "Win") {
-        updateScore(1);
-      } else if (outcome === "Lose") {
-        updateScore(-1);
-      }
-    }
-  }, [outcome]);
+  if (outcome === "Win" || outcome === "Lose") {
+    updateScore(outcome === "Win" ? 1 : -1);
+  }
 
   useEffect(() => {
     const intervalId = setInterval(() => {
