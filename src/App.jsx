@@ -13,6 +13,7 @@ import ScoreContext from "./contexts/ScoreContext";
 function App() {
   const [score, setScore] = useState(0);
 
+  // This updates score by 1 in the RockVersus component, idk how to change it so it decrements or increments the score based on the outcome. halp plx
   function updateScore() {
     setScore(score + 1);
   }
