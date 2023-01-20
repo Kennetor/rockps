@@ -52,7 +52,7 @@ function PaperVersus() {
             ) : null}
           </div>
         </div>
-        <OutcomeMessage />
+        <OutcomeMessage outcome={outcome} />
       </div>
       <Modal />
     </>

@@ -51,7 +51,7 @@ function ScissorsVersus() {
             ) : null}
           </div>
         </div>
-        <OutcomeMessage />
+        <OutcomeMessage outcome={outcome} />
       </div>
       <Modal />
     </>
