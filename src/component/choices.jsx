@@ -17,7 +17,7 @@ export function Paper() {
   return (
     <>
       <div className="papir">
-        <img src={paper} className=" p-8" />
+        <img src={paper} className="p-8" />
       </div>
     </>
   );

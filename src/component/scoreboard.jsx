@@ -15,7 +15,7 @@ function Scoreboard() {
         </div>
         <div className="rounded-xl border-2 xl:ml-44 w-1/3 bg-white text-3xl text-slate-800 ml-24">
           <p className="text-2xl xl:mt-4 mt-2 xl:w w-20 m-auto">Score</p>
-          <div className="text-7xl">
+          <div className="xl:text-7xl text-4xl">
             <span>{`${score}`}</span>
           </div>
         </div>
