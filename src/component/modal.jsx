@@ -1,5 +1,5 @@
-import rules from "./image-rules.svg";
-import closeRules from "./icon-close.svg";
+import rules from "./img/image-rules.svg";
+import closeRules from "./img/icon-close.svg";
 
 function Modal() {
   return (

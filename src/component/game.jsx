@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 import "../App.css";
 
 // Images
-import triangle from "../component/bg-triangle.svg";
+import triangle from "../component/img/bg-triangle.svg";
 // Components
-import Paper from "./paper";
-import Rock from "./rock";
-import Scissors from "./scissors";
+
 import Modal from "./modal";
+import Rock, { Paper, Scissors } from "./choices";
 
 function Game() {
   return (

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { HashRouter as Router, Route, Routes, Outlet } from "react-router-dom";
 
 // Components
@@ -25,11 +25,6 @@ function App() {
         break;
     }
   }
-
-  useEffect(() => {
-    // console.log("score updated: ", score);
-  }, [score]);
-
   return (
     <>
       <Router>
@@ -42,7 +37,7 @@ function App() {
               <Route path="/play-paper" element={<PaperVersus />} />
               <Route path="/play-scissors" element={<ScissorsVersus />} />
             </Routes>
-          </div>{" "}
+          </div>
         </ScoreContext.Provider>
       </Router>
       <Outlet />

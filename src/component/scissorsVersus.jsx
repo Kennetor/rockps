@@ -1,50 +1,27 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState, useContext } from "react";
-import Paper from "./paper";
-import Rock from "./rock";
-import Scissors from "./scissors";
+import { useState } from "react";
+// Components
 import Modal from "./modal";
-import ScoreContext from "../contexts/ScoreContext";
-import DetermineOutcome from "./determineOutcome";
+import DetermineOutcome, { OutcomeMessage } from "./determineOutcome";
+import useEffectComponent from "./useEffectComponent";
+import Rock, { Paper, Scissors } from "./choices";
 
 <DetermineOutcome />;
 
 function ScissorsVersus() {
   const [random, setRandom] = useState(0);
   const [countdown, setCountdown] = useState(1);
-  const { updateScore } = useContext(ScoreContext);
   const [outcome, setOutcome] = useState(null);
   const userChoice = "scissors";
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCountdown(countdown - 1);
-    }, 1000);
-
-    if (countdown === 0) {
-      clearInterval(intervalId);
-      const r = Math.floor(Math.random() * 3);
-      setRandom(r);
-      let randomChoice;
-      if (r === 0) {
-        randomChoice = "paper";
-      } else if (r === 1) {
-        randomChoice = "rock";
-      } else {
-        randomChoice = "scissors";
-      }
-      setOutcome(DetermineOutcome(userChoice, randomChoice));
-      console.log(`PLAYER PICKED: ${userChoice} \nNPC PICKED: ${randomChoice}`);
-    }
-
-    return () => clearInterval(intervalId);
-  }, [countdown]);
-
-  useEffect(() => {
-    if (outcome !== null && outcome !== "draw") {
-      updateScore(outcome);
-    }
-  }, [outcome]);
+  useEffectComponent({
+    countdown,
+    setCountdown,
+    setRandom,
+    outcome,
+    setOutcome,
+    userChoice,
+  });
 
   return (
     <>
@@ -74,6 +51,7 @@ function ScissorsVersus() {
             ) : null}
           </div>
         </div>
+        <OutcomeMessage />
       </div>
       <Modal />
     </>
