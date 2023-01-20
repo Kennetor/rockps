@@ -5,11 +5,16 @@ import Rock from "./rock";
 import Scissors from "./scissors";
 import Modal from "./modal";
 import ScoreContext from "../contexts/ScoreContext";
+import DetermineOutcome from "./determineOutcome";
+
+<DetermineOutcome />;
 
 function ScissorsVersus() {
   const [random, setRandom] = useState(0);
   const [countdown, setCountdown] = useState(1);
   const { updateScore } = useContext(ScoreContext);
+  const [outcome, setOutcome] = useState(null);
+  const userChoice = "scissors";
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -18,25 +23,28 @@ function ScissorsVersus() {
 
     if (countdown === 0) {
       clearInterval(intervalId);
-      setRandom(Math.floor(Math.random() * 3));
+      const r = Math.floor(Math.random() * 3);
+      setRandom(r);
+      let randomChoice;
+      if (r === 0) {
+        randomChoice = "paper";
+      } else if (r === 1) {
+        randomChoice = "rock";
+      } else {
+        randomChoice = "scissors";
+      }
+      setOutcome(DetermineOutcome(userChoice, randomChoice));
+      console.log(`PLAYER PICKED: ${userChoice} \nNPC PICKED: ${randomChoice}`);
     }
+
     return () => clearInterval(intervalId);
   }, [countdown]);
 
   useEffect(() => {
-    if (countdown === 0) {
-      if (random === 0) {
-        // paper
-        updateScore("lose");
-      } else if (random === 1) {
-        // rock
-        updateScore("draw");
-      } else {
-        // scissors
-        updateScore("win");
-      }
+    if (outcome !== null && outcome !== "draw") {
+      updateScore(outcome);
     }
-  }, [countdown, random]);
+  }, [outcome]);
 
   return (
     <>

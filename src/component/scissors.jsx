@@ -5,8 +5,8 @@ import saks from "./icon-scissors.svg";
 function Scissors() {
   return (
     <>
-      <div class="saks">
-        <img src={saks} className=" p-8" />
+      <div className="saks">
+        <img src={saks} className="p-8" />
       </div>
     </>
   );

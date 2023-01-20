@@ -5,11 +5,16 @@ import Rock from "./rock";
 import Scissors from "./scissors";
 import Modal from "./modal";
 import ScoreContext from "../contexts/ScoreContext";
+import DetermineOutcome from "./determineOutcome";
+
+<DetermineOutcome />;
 
 function PaperVersus() {
   const [random, setRandom] = useState(0);
   const [countdown, setCountdown] = useState(1);
   const { updateScore } = useContext(ScoreContext);
+  const [outcome, setOutcome] = useState(null);
+  const userChoice = "paper";
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -18,22 +23,28 @@ function PaperVersus() {
 
     if (countdown === 0) {
       clearInterval(intervalId);
-      setRandom(Math.floor(Math.random() * 3));
+      const r = Math.floor(Math.random() * 3);
+      setRandom(r);
+      let randomChoice;
+      if (r === 0) {
+        randomChoice = "paper";
+      } else if (r === 1) {
+        randomChoice = "rock";
+      } else {
+        randomChoice = "scissors";
+      }
+      setOutcome(DetermineOutcome(userChoice, randomChoice));
+      console.log(`PLAYER PICKED: ${userChoice} \nNPC PICKED: ${randomChoice}`);
     }
+
     return () => clearInterval(intervalId);
   }, [countdown]);
 
   useEffect(() => {
-    if (countdown === 0) {
-      if (random === 1) {
-        updateScore("draw");
-      } else if (random === 2) {
-        updateScore("lose");
-      } else {
-        updateScore("win");
-      }
+    if (outcome !== null && outcome !== "draw") {
+      updateScore(outcome);
     }
-  }, [countdown, random]);
+  }, [outcome]);
 
   return (
     <>
@@ -53,18 +64,15 @@ function PaperVersus() {
 
           <div>
             {countdown === 0 ? (
-              random === 1 ? (
+              random === 0 ? (
                 <Paper />
-              ) : random === 2 ? (
+              ) : random === 1 ? (
                 <Rock />
               ) : (
                 <Scissors />
               )
             ) : null}
           </div>
-          {countdown === 0 && random === 2 ? updateScore(1) : null}
-          {countdown === 0 && random === 1 ? updateScore(-1) : null}
-          {countdown === 0 && random === 0 ? updateScore(0) : null}
         </div>
       </div>
 

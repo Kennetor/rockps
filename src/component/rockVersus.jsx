@@ -7,42 +7,16 @@ import Paper from "./paper";
 import Rock from "./rock";
 import Scissors from "./scissors";
 import Modal from "./modal";
+import DetermineOutcome from "./determineOutcome";
 
-export function determineOutcome(userChoice, randomChoice) {
-  let result;
-  if (userChoice === "rock") {
-    if (randomChoice === "scissors") {
-      result = "win";
-    } else if (randomChoice === "paper") {
-      result = "lose";
-    } else if (randomChoice === "rock") {
-      result = "draw";
-    }
-  } else if (userChoice === "paper") {
-    if (randomChoice === "rock") {
-      result = "win";
-    } else if (randomChoice === "scissors") {
-      result = "lose";
-    } else if (randomChoice === "paper") {
-      result = "draw";
-    }
-  } else if (userChoice === "scissors") {
-    if (randomChoice === "paper") {
-      result = "win";
-    } else if (randomChoice === "rock") {
-      result = "lose";
-    } else if (randomChoice === "scissors") {
-      result = "draw";
-    }
-  }
-}
+<DetermineOutcome />;
 
 function RockVersus() {
-  const [userChoice, setUserChoice] = useState("rock");
   const [random, setRandom] = useState(0);
   const [countdown, setCountdown] = useState(1);
   const { updateScore } = useContext(ScoreContext);
   const [outcome, setOutcome] = useState(null);
+  const userChoice = "rock";
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -51,16 +25,18 @@ function RockVersus() {
 
     if (countdown === 0) {
       clearInterval(intervalId);
-      setRandom(Math.floor(Math.random() * 3));
+      const r = Math.floor(Math.random() * 3);
+      setRandom(r);
       let randomChoice;
-      if (random === 0) {
+      if (r === 0) {
         randomChoice = "paper";
-      } else if (random === 1) {
+      } else if (r === 1) {
         randomChoice = "rock";
       } else {
         randomChoice = "scissors";
       }
-      setOutcome(determineOutcome(userChoice, randomChoice));
+      setOutcome(DetermineOutcome(userChoice, randomChoice));
+      console.log(`PLAYER PICKED: ${userChoice} \nNPC PICKED: ${randomChoice}`);
     }
 
     return () => clearInterval(intervalId);

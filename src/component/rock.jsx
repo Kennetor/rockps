@@ -5,7 +5,7 @@ import rock from "./icon-rock.svg";
 function Rock() {
   return (
     <>
-      <div class="stein">
+      <div className="stein">
         <img src={rock} className="p-8" />
       </div>
     </>

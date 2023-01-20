@@ -5,7 +5,7 @@ import paper from "./icon-paper.svg";
 function Paper() {
   return (
     <>
-      <div class="papir">
+      <div className="papir">
         <img src={paper} className=" p-8" />
       </div>
     </>
