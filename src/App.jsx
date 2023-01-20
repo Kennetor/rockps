@@ -21,7 +21,7 @@ function App() {
         setScore((prevScore) => prevScore - 1);
         break;
       case "draw":
-        setScore(score);
+        setScore((prevScore) => prevScore);
         break;
     }
   }

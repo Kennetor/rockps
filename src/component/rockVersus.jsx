@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 // Components
 import Modal from "./modal";
-import DetermineOutcome from "./determineOutcome";
+import DetermineOutcome, { OutcomeMessage } from "./determineOutcome";
 import useEffectComponent from "./useEffectComponent";
 import Rock, { Paper, Scissors } from "./choices";
 
@@ -51,6 +51,7 @@ function RockVersus() {
             ) : null}
           </div>
         </div>
+        <OutcomeMessage outcome={outcome} />
       </div>
       <Modal />
     </>

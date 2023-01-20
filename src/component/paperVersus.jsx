@@ -3,7 +3,7 @@ import { useState } from "react";
 // Components
 
 import Modal from "./modal";
-import DetermineOutcome from "./determineOutcome";
+import DetermineOutcome, { OutcomeMessage } from "./determineOutcome";
 import useEffectComponent from "./useEffectComponent";
 import Rock, { Paper, Scissors } from "./choices";
 
@@ -52,6 +52,7 @@ function PaperVersus() {
             ) : null}
           </div>
         </div>
+        <OutcomeMessage />
       </div>
       <Modal />
     </>
