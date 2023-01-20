@@ -25,14 +25,16 @@ function ScissorsVersus() {
 
   useEffect(() => {
     if (countdown === 0) {
-      if (random === 1) {
-        updateScore("draw");
-      } else if (random === 2) {
+      if (random === 0) {
+        // paper
         updateScore("lose");
+      } else if (random === 1) {
+        // rock
+        updateScore("draw");
       } else {
+        // scissors
         updateScore("win");
       }
-      console.log(random);
     }
   }, [countdown, random]);
 
