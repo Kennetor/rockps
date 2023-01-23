@@ -6,7 +6,7 @@ function Modal() {
     <>
       <label
         htmlFor="my-modal"
-        className="btn bottom-10 xl:right-10 absolute float-right scale-125 right-36"
+        className="btn bottom-10 xl:right-10 absolute float-right scale-125 right-44"
       >
         Rules
       </label>

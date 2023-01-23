@@ -32,7 +32,7 @@ function ScissorsVersus() {
         </div>
         <Link to="/">
           <div className="grid">
-            <button className="absolute xl:flex bottom-56 left-32 xl:left-[50rem] xl:bottom-44 w-52 xl:scale-150">
+            <button className="z-50 absolute bottom-60 left-24 xl:left-1/2 xl:-translate-y-64 xl:-translate-x-1/2 xl:bottom-44 w-52 xl:scale-150">
               Play Again!
             </button>
           </div>

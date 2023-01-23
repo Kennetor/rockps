@@ -6,7 +6,7 @@
   background: white;
   border-radius: 50%;
   border-style: solid;
-  border-width: 10px;
+  border-width: 18px;
   border-color: hsl(349, 70%, 56%);
 }
 .stein:hover {
@@ -17,7 +17,7 @@
   background: white;
   border-radius: 50%;
   border-style: solid;
-  border-width: 10px;
+  border-width: 18px;
   border-color: hsl(39, 89%, 49%);
 }
 .saks:hover {
@@ -28,7 +28,7 @@
   background: white;
   border-radius: 50%;
   border-style: solid;
-  border-width: 10px;
+  border-width: 18px;
   border-color: hsl(230, 89%, 65%);
 }
 .papir:hover {

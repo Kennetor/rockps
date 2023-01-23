@@ -12,7 +12,7 @@ import Rock, { Paper, Scissors } from "./choices";
 function Game() {
   return (
     <>
-      <div className="xl:grid grid-cols- m-auto">
+      <div className="xl:grid grid-cols-2 xl:-ml-20 mt-44 xl:mt-0">
         <div className="xl:mt-20">
           {/* Choices */}
           <div className=" xl:-mt-10 m-auto xl:scale-110 flex mt-20">
