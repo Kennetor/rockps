@@ -26,7 +26,7 @@ function RockVersus() {
   return (
     <>
       <div className="xl:mt-0 -mt-14">
-        <div className="fixed xl:-translate-x-[30rem] left-12 xl:right xl:scale-150 xl:left-1/2 top-72 xl:top-[30rem]">
+        <div className="fixed left-12 xl:right xl:scale-150 xl:left-96 top-72 xl:top-[30rem]">
           <h1 className="flex mr-6 justify-center">You Picked</h1>
           <Rock />
         </div>
