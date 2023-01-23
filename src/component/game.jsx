@@ -12,9 +12,9 @@ import Rock, { Paper, Scissors } from "./choices";
 function Game() {
   return (
     <>
-      <div className="xl:-mt-20">
+      <div className="xl:-mt-">
         {/* Choices */}
-        <div className="xl:ml-20 xl:mt-20 xl:absolute xl:scale-110 top-56 left-40 mt-0">
+        <div className=" xl:mt-20 m-auto xl:scale-110 flex mt-20">
           <img
             src={triangle}
             className="absolute left-10 xl:left-80 xl:top-44 xl:scale-150"

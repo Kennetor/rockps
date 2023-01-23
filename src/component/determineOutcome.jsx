@@ -29,7 +29,7 @@ function DetermineOutcome(userChoice, randomChoice) {
 }
 export function OutcomeMessage(props) {
   return (
-    <div className="text-5xl  -mt-32 xl:-mt-40">
+    <div className="text-5xl mt-20 fixed bottom-80 left-36 xl:right-96 xl:top-[30rem] xl:left-96">
       {props.outcome === "win" ? (
         <div>You Win!</div>
       ) : props.outcome === "lose" ? (

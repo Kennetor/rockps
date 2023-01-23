@@ -32,7 +32,7 @@ function PaperVersus() {
           <Paper />
         </div>
         <Link to="/">
-          <button className="absolute bottom-32 left-36 xl:left-[40rem] xl:bottom-44 xl:scale-150">
+          <button className="absolute bottom-28 left-32 xl:left-[60rem] xl:bottom-44 w-52 xl:scale-150">
             Play Again!
           </button>
         </Link>
