@@ -15,7 +15,7 @@ function Game() {
       <div className="xl:grid grid-cols- m-auto">
         <div className="xl:mt-20">
           {/* Choices */}
-          <div className=" xl:mt-20 m-auto xl:scale-110 flex mt-20">
+          <div className=" xl:mt-0 m-auto xl:scale-110 flex mt-20">
             <img
               src={triangle}
               className="absolute left-10 xl:left-80 xl:top-44 xl:scale-150"
