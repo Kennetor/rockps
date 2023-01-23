@@ -28,6 +28,15 @@ export function Paper() {
     </>
   );
 }
+export function Circle() {
+  return (
+    <>
+      <div className="relative p-10 ">
+        <div className="fixed -translate-y-8 -translate-x-16 m-auto h-32 w-32 bg-slate-900 rounded-full opacity-30"></div>
+      </div>
+    </>
+  );
+}
 function Rock() {
   return (
     <>

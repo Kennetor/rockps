@@ -6,13 +6,13 @@ function Modal() {
     <>
       <label
         htmlFor="my-modal"
-        className="btn bottom-10 xl:right-10 absolute float-right scale-125 right-44"
+        className="btn bottom-10 xl:right-10 absolute float-right scale-125 right-36 bg-transparent border-white w-[8rem] text-xl"
       >
         Rules
       </label>
       <input type="checkbox" id="my-modal" className="modal-toggle" />
       <div className="modal">
-        <div className="modal-box bg-slate-100">
+        <div className="modal-box">
           {/* Modal Content */}
           <label htmlFor="my-modal">
             <div className="rulesheader">

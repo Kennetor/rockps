@@ -4,7 +4,7 @@ import { useState } from "react";
 import Modal from "./modal";
 import DetermineOutcome, { OutcomeMessage } from "./determineOutcome";
 import useEffectComponent from "./useEffectComponent";
-import Rock, { Paper, Scissors } from "./choices";
+import Rock, { Circle, Paper, Scissors } from "./choices";
 
 <DetermineOutcome />;
 
@@ -27,21 +27,26 @@ function ScissorsVersus() {
     <>
       <div className="xl:mt-0 -mt-14">
         <div className="fixed xl:-translate-x-[30rem] left-12 xl:right xl:scale-150 xl:left-1/2 top-72 xl:top-[30rem]">
-          <h1 className="flex mr-12 justify-center">You Picked</h1>
+          <h1 className="flex mr-12 justify-center xl:scale-150 ">
+            You Picked
+          </h1>
           <Scissors />
         </div>
-        <Link to="/">
-          <div className="grid">
-            <button className="z-50 absolute bottom-60 left-24 xl:left-1/2 xl:-translate-y-64 xl:-translate-x-1/2 xl:bottom-44 w-52 xl:scale-150">
-              Play Again!
-            </button>
-          </div>
-        </Link>
+        {countdown === 0 ? (
+          <Link to="/">
+            <div className="grid">
+              <button className="z-50 text-2xl absolute bottom-60 translate-y-16 left-24 xl:left-1/2 xl:-translate-y-64 xl:-translate-x-1/2 xl:bottom-44 w-52 xl:scale-150">
+                Play Again!
+              </button>
+            </div>
+          </Link>
+        ) : null}
         <div className="fixed right-12 xl:right xl:scale-150 xl:right-96 top-72 xl:top-[30rem]">
-          <h1 className="flex mr-6 justify-center">The House Picked</h1>
-          {countdown > 0 ? <div>{countdown}</div> : null}
-
+          <h1 className="flex mr-6 justify-center xl:scale-150 ">
+            The House Picked
+          </h1>
           <div>
+            {countdown > 0 ? <Circle /> : null}
             {countdown === 0 ? (
               random === 0 ? (
                 <Paper />
