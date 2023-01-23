@@ -31,9 +31,11 @@ function ScissorsVersus() {
           <Scissors />
         </div>
         <Link to="/">
-          <button className="absolute bottom-28 left-32 xl:left-[60rem] xl:bottom-44 w-52 xl:scale-150">
-            Play Again!
-          </button>
+          <div className="grid">
+            <button className="absolute xl:flex bottom-56 left-32 xl:left-[50rem] xl:bottom-44 w-52 xl:scale-150">
+              Play Again!
+            </button>
+          </div>
         </Link>
         <div className="fixed right-12 xl:right xl:scale-150 xl:right-96 top-72 xl:top-[30rem]">
           <h1>The House Picked</h1>
