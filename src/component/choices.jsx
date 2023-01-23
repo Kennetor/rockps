@@ -32,7 +32,7 @@ export function Circle() {
   return (
     <>
       <div className="relative p-10 ">
-        <div className="fixed -translate-y-8 -translate-x-16 m-auto h-32 w-32 bg-slate-900 rounded-full opacity-30"></div>
+        <div className="fixed -translate-y-8 xl:-translate-x-16 -translate-x-10 m-auto h-32 w-32 bg-slate-900 rounded-full opacity-30"></div>
       </div>
     </>
   );
@@ -41,13 +41,10 @@ export function WinnerCircle() {
   return (
     <>
       <div className="absolute">
-        <div className="fixed p-10 ">
+        <div className="fixed p-14 ml-4">
           <div className="fixed -translate-y-52 -translate-x-60 m-auto h-[30rem] w-[30rem] bg-slate-600 rounded-full opacity-10"></div>
           <div className="fixed -translate-y-40 -translate-x-48 m-auto h-[25rem] w-[25rem] bg-slate-600 rounded-full opacity-10"></div>
           <div className="fixed -translate-y-28 -translate-x-36 m-auto h-72 w-72 bg-slate-600 rounded-full opacity-10"></div>
-        </div>
-        <div className="relative p-10 ">
-          <div className="fixed -translate-y-8 -translate-x-16 m-auto h-32 w-32 bg-slate-900 rounded-full opacity-30"></div>
         </div>
       </div>
     </>

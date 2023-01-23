@@ -5,7 +5,7 @@ import { useState } from "react";
 import Modal from "./modal";
 import DetermineOutcome, { OutcomeMessage } from "./determineOutcome";
 import useEffectComponent from "./useEffectComponent";
-import Rock, { Circle, Paper, Scissors } from "./choices";
+import Rock, { Circle, Paper, Scissors, WinnerCircle } from "./choices";
 
 <DetermineOutcome />;
 
@@ -29,6 +29,15 @@ function PaperVersus() {
       <div className="xl:mt-0 -mt-14">
         <div className="fixed xl:-translate-x-[30rem] left-12 xl:right xl:scale-150 xl:left-1/2 top-72 xl:top-[30rem]">
           <h1 className="flex mr-0 justify-center xl:scale-150 ">You Picked</h1>
+          <div>
+            {countdown === 0 ? (
+              random == 0 ? null : random === 2 ? null : (
+                <div>
+                  <WinnerCircle />
+                </div>
+              )
+            ) : null}
+          </div>
           <Paper />
         </div>
         {countdown === 0 ? (
@@ -51,7 +60,10 @@ function PaperVersus() {
                 ) : random === 1 ? (
                   <Rock />
                 ) : (
-                  <Scissors />
+                  <div>
+                    <WinnerCircle />
+                    <Scissors />
+                  </div>
                 )
               ) : null}
             </div>
