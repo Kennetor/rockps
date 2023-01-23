@@ -42,6 +42,7 @@ function RockVersus() {
             The House Picked
           </h1>
           <div>
+            {/* <WinnerCircle /> */}
             {countdown > 0 ? <Circle /> : null}
             {countdown === 0 ? (
               random === 0 ? (
