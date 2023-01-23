@@ -11,8 +11,8 @@ function Modal() {
         Rules
       </label>
       <input type="checkbox" id="my-modal" className="modal-toggle" />
-      <div className="modal">
-        <div className="modal-box">
+      <div className="modal xl:scale-150">
+        <div className="modal-box bg-white">
           {/* Modal Content */}
           <label htmlFor="my-modal">
             <div className="rulesheader">
