@@ -8,7 +8,7 @@ function Scoreboard() {
 
   return (
     <>
-      <div className="border-2 rounded-xl p-4 flex border-blue-300 m-auto -mt-96 xl:-mt-[30rem] xl:scale-110 xl:right-60 right-2">
+      <div className="border-2 rounded-xl p-4 flex border-blue-300 m-auto -mt-96 xl:-mt-[29rem] xl:scale-110 xl:right-60 right-2">
         <div className="xl:text-5xl text-3xl p-2 text-left xl:w-[33rem] ">
           <img src={Logo} className=" xl:h-40 scale"></img>
         </div>
