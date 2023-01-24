@@ -42,7 +42,7 @@ function PaperVersus() {
         </div>
         {countdown === 0 ? (
           <Link to="/">
-            <button className="z-50 absolute text-2xl bottom-60 translate-y-16 left-24 xl:left-1/2 xl:-translate-y-64 xl:-translate-x-1/2 xl:bottom-44 w-52 xl:scale-150">
+            <button className="animate-ProjectPopUp z-50 absolute text-2xl bottom-60 translate-y-16 left-24 xl:left-1/2 xl:-translate-y-64 xl:-translate-x-1/2 xl:bottom-44 w-52 xl:scale-150">
               Play Again!
             </button>
           </Link>

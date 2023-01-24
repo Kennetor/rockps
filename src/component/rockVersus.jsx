@@ -27,7 +27,7 @@ function RockVersus() {
     <>
       <div className="xl:mt-0 -mt-14">
         <div className="fixed xl:-translate-x-[30rem] left-12 xl:right xl:scale-150 xl:left-1/2 top-72 xl:top-[30rem]">
-          <h1 className="flex mr-6 justify-center xl:scale-150 ">You Picked</h1>
+          <h1 className="flex mr-6 justify-center xl:scale-150">You Picked</h1>
           <div>
             {countdown === 0 ? (
               random == 0 ? null : random === 1 ? null : (
@@ -41,7 +41,7 @@ function RockVersus() {
         </div>
         {countdown === 0 ? (
           <Link to="/">
-            <button className="z-50 text-2xl absolute bottom-60 translate-y-16 left-24 xl:left-1/2 xl:-translate-y-64 xl:-translate-x-1/2 xl:bottom-44 w-52 xl:scale-150">
+            <button className="animate-ProjectPopUp z-50 text-2xl absolute bottom-60 translate-y-16 left-24 xl:left-1/2 xl:-translate-y-64 xl:-translate-x-1/2 xl:bottom-44 w-52 xl:scale-150">
               Play Again!
             </button>
           </Link>
