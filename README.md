@@ -1,4 +1,4 @@
-Live site: https://ktkodehode.github.io/rockps/
+Live site: https://kennetor.github.io/rockps/
 
 # Frontend Mentor - Rock, Paper, Scissors
 
